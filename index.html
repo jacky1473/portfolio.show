@@ -3,67 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Personal portfolio for Farman Ahmed, a Cloud & Linux Engineer specializing in AWS, Ansible, and automation.">
   <title>Farman Ahmed | Cloud & Linux Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <header class="site-header">
     <nav class="navbar">
-      <a href="#about" class="logo">Farman Ahmed</a>
-      <ul class="nav-links">
+      <a href="#" class="logo">Farman Ahmed</a>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+      <div class="nav-right">
+          <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+          <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+      </div>
     </nav>
     <div class="hero">
-      <h1>Hello, I’m Farman</h1>
+      <h1>Hello, I’m <span id="typing-name"></span></h1>
       <p>Cloud & Linux Engineer crafting reliable infrastructure</p>
     </div>
   </header>
 
   <main>
     <section id="about" class="fade-in">
-      <h2>About Me</h2>
+      <h2><i class="fas fa-user-circle"></i> About Me</h2>
       <p>
-        Dedicated to building scalable Linux and AWS systems. I automate
-        everything I can, enforce security and ensure high availability.
+        Dedicated and detail-oriented Cloud & Linux Engineer with a passion for building scalable and resilient systems. I thrive on automating complex processes, enforcing robust security measures, and ensuring high availability for critical infrastructure on AWS and on-premise environments.
       </p>
     </section>
 
     <section id="skills" class="fade-in">
-      <h2>Core Skills</h2>
+      <h2><i class="fas fa-cogs"></i> Core Skills</h2>
       <div class="skills-grid">
-        <div class="skill-item">Linux</div>
-        <div class="skill-item">AWS</div>
-        <div class="skill-item">Ansible</div>
-        <div class="skill-item">Docker</div>
-        <div class="skill-item">Terraform</div>
-        <div class="skill-item">Bash Scripting</div>
-        <div class="skill-item">Git & GitHub</div>
-        <div class="skill-item">CI/CD</div>
+        <div class="skill-item"><i class="fab fa-linux"></i> Linux</div>
+        <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+        <div class="skill-item"><i class="fas fa-robot"></i> Ansible</div>
+        <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+        <div class="skill-item"><i class="fas fa-cube"></i> Terraform</div>
+        <div class="skill-item"><i class="fas fa-terminal"></i> Bash</div>
+        <div class="skill-item"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+        <div class="skill-item"><i class="fas fa-sync-alt"></i> CI/CD</div>
       </div>
     </section>
 
     <section id="projects" class="fade-in">
-      <h2>Projects</h2>
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
       <div id="projectsGrid" class="projects-grid">
-        <!-- Project cards will be injected here -->
+        <div class="loader"></div>
       </div>
     </section>
 
     <section id="contact" class="fade-in">
-      <h2>Contact</h2>
+      <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
       <p>
-        Let’s connect! Email me at
-        <a href="mailto:ahmedfarman102@gmail.com">ahmedfarman102@gmail.com</a>
+        Let’s connect! I'm always open to new opportunities and collaborations.
       </p>
+      <div class="contact-links">
+          <a href="mailto:ahmedfarman102@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+          <a href="https://github.com/ahmedfarman102" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
     </section>
   </main>
 
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
