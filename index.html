@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farman Ahmed | Cloud & Linux Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farman Ahmed | Cloud & Linux Engineer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1>Farman Ahmed</h1>
-        <p>Cloud & Linux Engineer</p>
-    </header>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#about" class="logo">Farman Ahmed</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+    </nav>
+    <div class="hero">
+      <h1>Hello, I’m Farman</h1>
+      <p>Cloud & Linux Engineer crafting reliable infrastructure</p>
+    </div>
+  </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>A dedicated and results-oriented professional with hands-on experience in Linux system administration, AWS cloud services, and automation. Eager to apply my skills to enhance system reliability and efficiency.</p>
-        </section>
+  <main>
+    <section id="about" class="fade-in">
+      <h2>About Me</h2>
+      <p>
+        Dedicated to building scalable Linux and AWS systems. I automate
+        everything I can, enforce security and ensure high availability.
+      </p>
+    </section>
 
-        <section id="skills">
-            <h2>Core Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Linux</div>
-                <div class="skill-item">AWS</div>
-                <div class="skill-item">Ansible</div>
-                <div class="skill-item">Docker</div>
-                <div class="skill-item">Terraform</div>
-                <div class="skill-item">Bash Scripting</div>
-                <div class="skill-item">Git & GitHub</div>
-                <div class="skill-item">CI/CD</div>
-            </div>
-        </section>
+    <section id="skills" class="fade-in">
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">Linux</div>
+        <div class="skill-item">AWS</div>
+        <div class="skill-item">Ansible</div>
+        <div class="skill-item">Docker</div>
+        <div class="skill-item">Terraform</div>
+        <div class="skill-item">Bash Scripting</div>
+        <div class="skill-item">Git & GitHub</div>
+        <div class="skill-item">CI/CD</div>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p><i>Project details will be added here soon...</i></p>
-        </section>
+    <section id="projects" class="fade-in">
+      <h2>Projects</h2>
+      <div id="projectsGrid" class="projects-grid">
+        <!-- Project cards will be injected here -->
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me via <a href="mailto:ahmedfarman102@gmail.com">Email</a>.</p>
-        </section>
-    </main>
+    <section id="contact" class="fade-in">
+      <h2>Contact</h2>
+      <p>
+        Let’s connect! Email me at
+        <a href="mailto:ahmedfarman102@gmail.com">ahmedfarman102@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
