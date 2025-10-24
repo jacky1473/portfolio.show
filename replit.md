@@ -29,6 +29,18 @@ This is a personal portfolio website for Farman Ahmed, a Cloud & Linux Engineer.
 The project runs a simple Node.js HTTP server on port 5000 (0.0.0.0) to serve the static files. No build process is required.
 
 ## Recent Changes
+- **2025-10-24**: Major UI redesign with modern, attractive styling
+  - Implemented beautiful purple gradient color scheme (#667eea to #764ba2)
+  - Enhanced typography with better font weights, sizing, and spacing
+  - Added smooth animations and hover effects on all interactive elements
+  - Created gradient backgrounds for skill items, buttons, and decorative elements
+  - Improved shadows and depth throughout for modern look
+  - Added shimmer effects on skill tiles and contact buttons
+  - Enhanced project cards with subtle animations and hover states
+  - Improved theme toggle button with backdrop blur effect
+  - Ensured WCAG AA contrast compliance in both light and dark themes
+  - All text elements now have proper contrast ratios for accessibility
+
 - **2025-10-24**: Initial import from GitHub and Replit environment setup
   - Created Node.js server for static file serving
   - Configured workflow to run on port 5000
