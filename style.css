@@ -432,6 +432,20 @@ h2 i {
     transform: translateX(4px);
     box-shadow: 0 4px 12px var(--shadow-glow);
 }
+.project-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.project-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .contact-links {
     display: flex;
     gap: 20px;

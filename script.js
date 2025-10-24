@@ -51,39 +51,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Dynamic Project Loading from GitHub API ---
     const GITHUB_USERNAME = 'ahmedfarman102';
-    // List of repo names you want to feature
-    const REPO_NAMES = ['acl-validator', 'yum-recovery', 'rapido-calculator']; 
     const grid = document.getElementById('projectsGrid');
 
     async function fetchProjects() {
         try {
-            // Create an array of fetch promises
-            const requests = REPO_NAMES.map(repo => 
-                fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo}`)
-                    .then(res => res.json())
-            );
-
-            // Wait for all promises to resolve
-            const projects = await Promise.all(requests);
+            const response = await fetch(`https://gh-pinned-repos.egoist.dev/?username=${GITHUB_USERNAME}`);
+            const projects = await response.json();
 
             grid.innerHTML = ''; // Clear loader
 
             projects.forEach(p => {
-                if (p.name) { // Check if the repo was found
-                    const card = document.createElement('div');
-                    card.className = 'project-card';
-                    card.innerHTML = `
-                        <div class="project-content">
-                          <div class="project-header">
-                            <h3><i class="fas fa-book"></i> ${p.name}</h3>
-                            <span class="language" style="background-color: ${getLanguageColor(p.language)}">${p.language || 'Text'}</span>
-                          </div>
-                          <p>${p.description || 'No description available.'}</p>
-                          <a href="${p.html_url}" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                }
+                const card = document.createElement('a');
+                card.className = 'project-card';
+                card.href = p.link;
+                card.target = '_blank';
+                card.innerHTML = `
+                    <div class="project-content">
+                      <div class="project-header">
+                        <h3><i class="fas fa-book"></i> ${p.repo}</h3>
+                        <span class="language" style="background-color: ${getLanguageColor(p.language)}">${p.language || 'Text'}</span>
+                      </div>
+                      <p>${p.description || 'No description available.'}</p>
+                      <div class="project-stats">
+                        <span><i class="fas fa-star"></i> ${p.stars}</span>
+                        <span><i class="fas fa-code-branch"></i> ${p.forks}</span>
+                      </div>
+                    </div>
+                `;
+                grid.appendChild(card);
             });
         } catch (error) {
             console.error('Failed to fetch projects:', error);

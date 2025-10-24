@@ -18,10 +18,6 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.setHeader('Pragma', 'no-cache');
-  res.setHeader('Expires', '0');
-
   let filePath = '.' + req.url;
   if (filePath === './') {
     filePath = './index.html';
@@ -29,6 +25,14 @@ const server = http.createServer((req, res) => {
 
   const extname = String(path.extname(filePath)).toLowerCase();
   const contentType = mimeTypes[extname] || 'application/octet-stream';
+
+  if (extname === '.css' || extname === '.js') {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+  } else {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+  }
 
   fs.readFile(filePath, (error, content) => {
     if (error) {
